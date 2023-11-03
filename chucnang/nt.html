@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chức năng nhắn tin</title>
+    <style>
+        #success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        form {
+            width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        textarea {
+            display: block;
+            width: 100%;
+            padding:10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        #success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+	<h1>Chức năng nhắn tin</h1>
+	<form>
+		<label for="message">Nhập nội dung tin nhắn:</label><br>
+		<textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+		<button type="submit" id="send">Gửi tin nhắn</button>
+	</form>
+
+	<div id="success-message">Gửi tin nhắn thành công</div>
+
+	<script>
+		// Lấydữ liệu từ form khi người dùng bấm nút gửi tin nhắn
+		document.getElementById("send").addEventListener("click", function(event){
+			event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút submit
+			var message = document.getElementById("message").value; // Lấy giá trị của textarea
+			sendMessage(message); // Gọi hàm sendMessage để gửi tin nhắn đến máy chủ
+			document.getElementById("message").value = ""; // Xóa nội dung tin nhắn trong textarea
+			showSuccessMessage(); // Hiển thị thông báo gửi tin nhắn thành công
+		});
+
+		// Hàm gửi tin nhắn đến máy chủ
+		function sendMessage(message){
+			// Sử dụng AJAX để gửi dữ liệu đến máy chủ
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			    if(xhttp.readyState == 4 && xhttp.status == 200) {
+			        console.log("Tin nhắn đã được gửi đến máy chủ"); // In ra thông báo gửi tin nhắn thành công trong console
+			    }
+			};
+			xhttp.open("POST", "YOUR_SERVER_URL", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("message=" + message);
+		}
+
+		// Hàm hiển thị thông báo gửi tin nhắn thành công
+		function showSuccessMessage(){
+			document.getElementById("success-message").style.display = "block";
+			setTimeout(function(){
+				document.getElementById("success-message").style.display = "none";
+			}, 3000); // Sau 3 giây, ẩn thông báo
+		}
+	</script>
+</body>
+</html>

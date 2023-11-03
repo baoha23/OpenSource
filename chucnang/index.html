@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styleindex.css">
+  <title>Bệnh viện Đa khoa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/chucnang/tb.js"></script>
+    <script src="/chucnang/tb1.js"></script>
+  </head>
+</head>
+
+<body>
+  <div id="notification-container"></div>
+  <header>
+    <div id="menu" class="fas fa-bars"></div>
+    <div id="navibar">
+      <a href="#" onclick="showNotifications()" style="cursor:pointer">Hiển thị thông báo</a>
+      <a href="/chucnang/nt.html">Nhắn tin</a>
+      <a href="#">Cài đặt</a>
+      <a href="/chucnang/login.html">Đăng xuất</a>
+ 
+    </div>
+    <script>
+      const menu = document.getElementById('menu');
+      const navibar = document.getElementById('navibar');
+      menu.addEventListener('click', () => {
+        menu.classList.toggle('fa-times');
+        navibar.classList.toggle('navibar-toggle');
+      })
+    </script>
+    <div class="top">
+      <div class="container">
+        <div class="header_top row">
+          <p> BCDD - <span> Bệnh Viện Châu Á </span></p>
+          <ul>
+            <i class="fa-solid fa-bars"></i>
+            <li><a href="/chucnang/gioithieu.html">Giới thiệu</a></li>
+            <li><a href="/chucnang/bs.html">Bác Sĩ</a></li>
+            <li><a href="/chucnang/thongtinBN.html">Thông tin bệnh nhân</a></li>
+            <li><a href="/chucnang/lichkham.html">Lịch Khám</a></li>
+          </ul>
+          <i class="fa-sharp fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+    <div class="benhvien_br">
+
+    </div>
+    <div class="header-text">
+      <h1> Phòng khám đa khoa hàng đầu Châu Á</h1>
+      <p>Cập nhật thông tin "Đúng - Nhanh - Liên tục "</p>
+      <a href="./Thongtin.html">
+        <button>Thông tin</button>
+      </a>
+
+    </div>
+  </header>
+
+  <section class="course">
+    <h1> Danh sách bác sĩ tiêu biểu </h1>
+    <div class="course-items container row">
+      <div class="course-item">
+        <h2>Bác Sĩ Đạt</h2>
+        <p>Là một chuyên gia trong lĩnh vực tâm lý và thần kinh </p>
+      </div>
+      <div class="course-item">
+        <h2>Bác Sĩ Cường</h2>
+        <p>Là một chuyên gia trong lĩnh vực da liễu </p>
+      </div>
+      <div class="course-item">
+        <h2>Bác Sĩ Bảo</h2>
+        <p>Là một chuyên gia trong lĩnh vực tim mạch </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="brand">
+    <h1> Cơ sở vật chất hiện đại </h1>
+    <div class="brand-items container row">
+      <div class="brand-item">
+        <h2>Máy 1</h2>
+        <img src="/chucnang/style/images/may1.jpg">
+      </div>
+      <div class="brand-item">
+        <h2>Máy 2</h2>
+        <img src="/chucnang/style/images/may2.jpg">
+      </div>
+      <div class="brand-item">
+        <h2>Máy 3</h2>
+        <img src="/chucnang/style/images/may3.jpg">
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

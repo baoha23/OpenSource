@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Đặt lịch phòng khám</title>
+    <style>
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Đặt lịch phòng khám</h1>
+    <form>
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+
+        <label for="doctor">Bác sĩ:</label>
+        <select id="doctor" name="doctor" required>
+            <option value="">Chọn bác sĩ</option>
+            <option value="bs_thanh">BS. Hà Quốc Bảo</option>
+            <option value="bs_hoa">BS. Huỳnh Tấn Đạt</option>
+            <option value="bs_linh">BS. Trần Ngọc Cường</option>
+        </select><br>
+
+        <label for="date">Ngày đặt lịch:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="time">Giờ đặt lịch:</label>
+        <input type="time" id="time" name="time" min="08:00" max="17:00" required><br>
+
+        <input type="submit" value="Đặt lịch">
+        <style>
+            form {
+                margin: 0 auto;
+                width: 50%;
+                max-width: 500px;
+                border: 1px solid #ccc;
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            label {
+                display: inline-block;
+                width: 30%;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            select,
+            input[type="date"],
+            input[type="time"] {
+                padding: 5px;
+                margin-bottom: 20px;
+                width: 60%;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #3e8e41;
+            }
+        </style>
+
+    </form>
+</body>
+
+</html>
